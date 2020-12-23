@@ -1,0 +1,223 @@
+﻿    <Page
+    x:Class="carSales_app3.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:carSales_app3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+        <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50"
+               OpenPaneLength="310">
+            <SplitView.Pane>
+                <StackPanel Background="Gray">
+                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" 
+                       Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="saveButton" FontFamily="Segoe MDL2 Assets" Content="&#xE825;" 
+                            Width="50" Height="65" Background="Transparent" Click="saveButton_Click"/>
+                        <TextBlock Text="Save" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="calculateButton" FontFamily="Segoe MDL2 Assets" Content="&#59631;" 
+                            Width="50" Height="65" Background="Transparent" Click="calculateButton_Click"/>
+                        <TextBlock Text="Calculate" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="resetButton" FontFamily="Segoe MDL2 Assets" Content="&#59630;" 
+                            Width="50" Height="65" Background="Transparent" Click="resetButton_Click"/>
+                        <TextBlock Text="Reset" FontSize="27" VerticalAlignment="Center"  />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="displayAllCustomersButton" FontFamily="Segoe MDL2 Assets" Content="&#59557;" 
+                            Width="50" Height="65" Background="Transparent" Click="displayAllCustomersButton_Click"/>
+                        <TextBlock Text="Display All Customers" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="searchNameButton" FontFamily="Segoe MDL2 Assets" Content="&#xE71C;" 
+                            Width="50" Height="65" Background="Transparent" Click="searchNameButton_Click"/>
+                        <TextBlock Text="Search Name" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="deleteNameButton" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" 
+                            Width="50" Height="65" Background="Transparent"/>
+                        <TextBlock Text="Delete Name" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="displayAllMakesButton" FontFamily="Segoe MDL2 Assets" Content="&#59557;" 
+                            Width="50" Height="65" Background="Transparent" Click="displayAllMakesButton_Click"/>
+                        <TextBlock Text="Display All Makes" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="binarySearchMakeButton" FontFamily="Segoe MDL2 Assets" Content="&#xE71C;" 
+                            Width="50" Height="65" Background="Transparent"/>
+                        <TextBlock Text="Binary Search Make" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="insertMakeButton" FontFamily="Segoe MDL2 Assets" Content="&#59643;" 
+                            Width="50" Height="65" Background="Transparent" Click="insertMakeButton_Click"/>
+                        <TextBlock Text="Insert Make" FontSize="27" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                </StackPanel>
+            </SplitView.Pane>
+
+            <SplitView.Content>
+                <Grid Margin="-45,0,10,5" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="310*"/>
+                        <ColumnDefinition Width="351*"/>
+                        <ColumnDefinition Width="314*"/>
+                        <ColumnDefinition Width="290*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Column="1" >
+                        <TextBlock x:Name="businessTextBlock" Text="Dodgy Brothers Motor Manager" 
+                             FontSize="36" FontFamily="Arial Narrow" FontStyle="Normal" Height="auto" 
+                             Margin="10,0,-372,0" TextAlignment="DetectFromContent"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="customerDetailsTextBlock" Text="Customer Details" 
+                             FontSize="25" FontFamily="Arial Narrow" FontStyle="Normal" Height="auto" 
+                             Margin="10,0,-315,0" TextAlignment="DetectFromContent" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Customer Name" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="customerNameTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" TabIndex="10" 
+                             BorderBrush="Black" ToolTipService.ToolTip="Please, enter a name" IsReadOnly="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Customer Phone" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="customerPhoneTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             TabIndex="20" ToolTipService.ToolTip="Please, enter a phone number" IsReadOnly="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Vehicle price" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="vehiclePriceTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             TabIndex="20" ToolTipService.ToolTip="Please, enter the vehicle price" IsReadOnly="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Less Trade In" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="lessTradeInTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             TabIndex="20" ToolTipService.ToolTip="Please, enter the less trade in value" 
+                             IsReadOnly="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Vehicle Make" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="vehicleMakeTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             TabIndex="20" ToolTipService.ToolTip="Please, enter a vehicle maker name" 
+                             IsReadOnly="False"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Calculations:" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,0,0,0" Height="45" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Center" BorderThickness="0.0" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="sub Amount" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="subAmountTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             IsEnabled="True" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="GST Amount" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="GSTAmountTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             IsEnabled="True" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Left" 
+                            Width="410" Margin="5,5,0,5" Grid.ColumnSpan="2">
+                        <TextBox Text="Final Amount" FontSize="26" FontFamily="Arial Narrow" 
+                   HorizontalAlignment="Center" Margin="0,10,10,0" Height="40" Width="216" IsReadOnly="True" 
+                    VerticalAlignment="Top" BorderThickness="0.0" />
+                        <TextBox x:Name="finalAmountTextBox" Text="" FontSize="26" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Width="168" 
+                             Height="40" Background="Yellow" Opacity="0.8" BorderThickness="2" BorderBrush="Black" 
+                             IsEnabled="True" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" 
+                            Width="245" Margin="69,5,0,5" Grid.RowSpan="5" >
+                        <TextBlock x:Name="nameAndPhoneTextBlock" Text="Name and Phone:" FontSize="16" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Left" Margin="10,10,0,10" VerticalAlignment="Top" Width="232" 
+                             Height="317"  Opacity="0.8" />
+                    </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" 
+                            Width="245" Margin="69,5,0,5" Grid.RowSpan="5" >
+                <TextBlock x:Name="vehicleMakesTextBlock" Text="Vehicle Makes:" FontSize="16" FontFamily="Arial Narrow" 
+                             HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="232" 
+                             Height="317"  Opacity="0.8" />
+                </StackPanel>
+                
+            </Grid>
+
+
+            </SplitView.Content>
+        </SplitView>
+
+    </Page>
+
